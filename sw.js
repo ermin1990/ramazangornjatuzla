@@ -5,7 +5,8 @@ const urlsToCache = [
   "manifest.json",
   "index.js",
   "ramadan.json",
-  "index.css"
+  "index.css",
+  "Vaktija-GornajTuzla-2023.png"
 ];
 
 self.addEventListener("install", function(event) {

@@ -1,98 +1,135 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #f2f2f2;
-    font-family: 'Open Sans', sans-serif;
-    color: #333333;
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-header {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 3.5rem;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.today {
-    margin: 20px;
-}
-
-.prayer-times {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 15px;
-}
-
-.prayer-time {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    flex: 1;
-    max-width: 600px;
-    text-align: center;
-    transition: box-shadow 0.3s ease;
-}
-
-.prayer-time:hover {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.prayer-time h2 {
-    margin-top: 0;
-    font-size: 2.5rem;
-}
-
-.prayer-time p {
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 2rem;
-    color: #555555;
-}
-
-.install-prompt {
-    position: fixed;
-    bottom: 0px;
-    padding: 5px;
-    background-color: #333333;
-    color: white;
-    padding-bottom: 10px;
-}
-
-@media only screen and (max-width: 600px) {
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #f2f2f2;
+        font-family: 'Open Sans', sans-serif;
+        color: #333333;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    
+    header {
+        background-color: #1a3734;
+        color: #ffffff;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .sura {
+        font-size: 0.5rem;
+    }
+    
     h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        margin-top: 0;
+        margin-bottom: 20px;
     }
+    
+    .today {
+        margin: 20px;
+    }
+    
     .prayer-times {
-        padding: 10px;
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 15px;
     }
+    
     .prayer-time {
-        width: 95%;
-        justify-content: space-between;
+        background-color: #1a3734;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+        flex: 1;
+        max-width: 600px;
+        text-align: center;
+        transition: box-shadow 0.3s ease;
     }
+    
+    .prayer-time:hover {
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
     .prayer-time h2 {
-        font-size: 2rem;
+        margin-top: 0;
+        font-size: 2.5rem;
+        color: #ffffff;
     }
+    
     .prayer-time p {
-        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 2rem;
+        color: #ffffff;
     }
-}
+    
+    .install-prompt {
+        width: 100%;
+        margin: 0 auto;
+        position: fixed;
+        bottom: 0px;
+        padding: 20px;
+        background-color: #1a3734;
+        color: white;
+    }
+    
+    .appInfo {
+        font-size: 0.6rem;
+    }
+    
+    .vaktijaFoto {
+        text-decoration: none;
+        background-color: #1a3734;
+        padding: 7px;
+        color: white;
+        border-color: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    #install-button {
+        background-color: rgb(10, 217, 79);
+        padding: 7px;
+        border: 0;
+        border-color: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    #dismiss-button {
+        background-color: rgb(224, 42, 18);
+        padding: 7px;
+        color: white;
+        border-color: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        .prayer-times {
+            padding: 10px;
+            flex-direction: column;
+        }
+        .prayer-time {
+            width: 95%;
+            justify-content: space-between;
+        }
+        .prayer-time h2 {
+            font-size: 2rem;
+        }
+        .prayer-time p {
+            font-size: 1.5rem;
+        }
+    }

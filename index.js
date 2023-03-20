@@ -1,26 +1,31 @@
 
 
-if ("serviceWorker" in navigator) {
+// Provjeri da li korisnik ima pristup internetu
+if (navigator.onLine) {
+    // Korisnik ima pristup internetu, osvježi informacije
     navigator.serviceWorker.register("/sw.js").then(function(registration) {
         console.log("Service worker registered successfully");
     }).catch(function(error) {
         console.error("Error registering service worker:", error);
     });
-    }
-    
-    // Prikaži promociju za instaliranje PWA-a ako je dostupna
-    let deferredPrompt;
-    const installPrompt = document.getElementById('install-prompt');
-    const installButton = document.getElementById('install-button');
-    const dismissButton = document.getElementById('dismiss-button');
-    
-    window.addEventListener('beforeinstallprompt', (e) => {
+} else {
+    // Korisnik nema pristup internetu, koristi postojeće informacije
+    console.log("Korisnik nema pristup internetu, koristi postojeće informacije.");
+}
+
+// Prikaži promociju za instaliranje PWA-a ako je dostupna
+let deferredPrompt;
+const installPrompt = document.getElementById('install-prompt');
+const installButton = document.getElementById('install-button');
+const dismissButton = document.getElementById('dismiss-button');
+
+window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
     installPrompt.style.display = 'block';
-    });
-    
-    installButton.addEventListener('click', () => {
+});
+
+installButton.addEventListener('click', () => {
     installPrompt.style.display = 'none';
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then((choiceResult) => {
@@ -31,12 +36,13 @@ if ("serviceWorker" in navigator) {
         }
         deferredPrompt = null;
     });
-    });
-    
-    dismissButton.addEventListener('click', () => {
+});
+
+dismissButton.addEventListener('click', () => {
     installPrompt.style.display = 'none';
     deferredPrompt = null;
-    });
+});
+
 
 
 
@@ -70,7 +76,7 @@ fetch('ramadan.json')
     const daysLeft = Math.ceil(ostaloJoš / (1000 * 3600 * 24));
 
     if (today < startRamadan){
-        info.innerHTML = `Ramazan još nije počeo </br> ostalo je još <b>${daysLeft}</b>. dana`;
+        info.innerHTML = `Ramazan još nije počeo </br> ostalo je još <b>${daysLeft}</b>. dana </br> <p>Ramazan počinje: <b>22.03.2023.</b> poslije Akšam namaza</p>`;
         showDate.style.display = "none";
     }else{
 
