@@ -1,4 +1,4 @@
-const CACHE_NAME = "vaktija-cache-v1";
+const CACHE_NAME = 'vaktija-gtz-v1';
 const urlsToCache = [
   "/",
   "index.html",
@@ -6,24 +6,29 @@ const urlsToCache = [
   "index.js",
   "ramadan.json",
   "index.css",
-  "Vaktija-GornajTuzla-2023.png"
+  "./Vaktija-GornjaTuzla-2023.png"
 ];
 
-self.addEventListener("install", function(event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
+self.addEventListener('install', (event) => {
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+        .then((cache) => {
+          console.log('Cache opened');
+          return cache.addAll(urlsToCache);
+        })
+    );
+  });
+  
 
-self.addEventListener("fetch", function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        return response;
-      }
-      return fetch(event.request);
-    })
-  );
-});
+  self.addEventListener('fetch', (event) => {
+    event.respondWith(
+      caches.match(event.request)
+        .then((response) => {
+          if (response) {
+            return response;
+          }
+          return fetch(event.request);
+        })
+    );
+  });
+  

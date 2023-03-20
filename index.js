@@ -1,17 +1,15 @@
 
-
-// Provjeri da li korisnik ima pristup internetu
-if (navigator.onLine) {
-    // Korisnik ima pristup internetu, osvježi informacije
-    navigator.serviceWorker.register("/sw.js").then(function(registration) {
-        console.log("Service worker registered successfully");
-    }).catch(function(error) {
-        console.error("Error registering service worker:", error);
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, (err) => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
     });
-} else {
-    // Korisnik nema pristup internetu, koristi postojeće informacije
-    console.log("Korisnik nema pristup internetu, koristi postojeće informacije.");
-}
+  }
+ 
 
 // Prikaži promociju za instaliranje PWA-a ako je dostupna
 let deferredPrompt;
@@ -51,6 +49,8 @@ let tagStart = false;
 let info = document.getElementById("info");
 
 // Fetch the data from the JSON file
+
+
 fetch('ramadan.json')
 .then(response => response.json())
 .then(data => {

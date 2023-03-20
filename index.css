@@ -22,7 +22,11 @@
     }
     
     .sura {
-        font-size: 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .bih {
+        font-size: 0.8rem;
     }
     
     h1 {
@@ -131,5 +135,11 @@
         }
         .prayer-time p {
             font-size: 1.5rem;
+        }
+        .sura {
+            font-size: 1rem;
+        }
+        .bih {
+            font-size: 0.9rem;
         }
     }
