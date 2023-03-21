@@ -1,23 +1,29 @@
-const CACHE_NAME = 'vaktija-gtz-v1';
+const CACHE_NAME = 'vaktija-gtz-v2';
 const urlsToCache = [
   "/",
   "index.html",
   "manifest.json",
-  "index.js",
+  "app.js",
   "ramadan.json",
   "index.css",
   "./Vaktija-GornjaTuzla-2023.png"
 ];
 
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-      caches.open(CACHE_NAME)
-        .then((cache) => {
-          console.log('Cache opened');
-          return cache.addAll(urlsToCache);
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
         })
-    );
-  });
+      );
+    }).then(() => {
+      console.log('Old caches deleted');
+    })
+  );
+});
   
 
   self.addEventListener('fetch', (event) => {
