@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplikacija za prikaz ramazanske vaktije">
+    <meta name="theme-color" content="#1a3734" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.ico">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Vaktija: Gornja Tuzla</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<style>
+    /* stilovi za označavanje trenutnog dana */
+    
+    .today {
+        background-color: #ffff99;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <h1> Vaktija za Gornju Tuzlu </h1>
+        <h2> Ramazan 1444. H / 2023. god </h2>
+    </header>
+
+    <table id="vaktija-table">
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Dan</th>
+                <th>Sehur</th>
+                <th>Iftar</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody">
+        </tbody>
+    </table>
+
+
+
+    <footer>
+        <h4>
+            Bajram-namaz je u petak 21. aprila <br> u 6 sati i 33 minute
+        </h4>
+    </footer>
+
+    <div class="vaktijaHolder">
+        <a class="vaktijaFoto" href="/"> Nazad </a>
+    </div>
+
+    <div class="vaktijaHolder">
+        <a class="vaktijaFoto" href="Vaktija-GornjaTuzla-2023.png"> Preuzmi vaktiju! </a>
+    </div>
+
+
+
+    <script src="vaktija.js"></script>
+</body>
+
+</html>

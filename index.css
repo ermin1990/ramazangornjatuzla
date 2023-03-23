@@ -100,6 +100,10 @@
         font-weight: bold;
     }
     
+    .vaktijaHolder {
+        margin: 20px;
+    }
+    
     #install-button {
         background-color: rgb(10, 217, 79);
         padding: 7px;
@@ -118,9 +122,56 @@
         font-weight: bold;
     }
     
+    .current-day {
+        background-color: yellow;
+    }
+    /* stilovi za centriranje tablice i responsivnost */
+    
+    #vaktija-table {
+        margin: 0 auto;
+        max-width: 800px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #vaktija-table th,
+    #vaktija-table td {
+        padding: 8px;
+        text-align: center;
+    }
+    
+    tr {
+        border-radius: 10px;
+    }
+    
+    tr:hover {
+        background-color: #6e6e6e;
+        color: white;
+    }
+    
+    .trenutni-dan {
+        background-color: #275752bd;
+        color: white;
+        font-weight: bolder;
+    }
+    
+    .left {
+        text-align: start;
+    }
+    
+    @media screen and (max-width: 480px) {
+        #vaktija-table {
+            font-size: 16px;
+        }
+    }
+    /* stilovi za označavanje trenutnog dana */
+    
     @media only screen and (max-width: 600px) {
         h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.5rem;
         }
         .prayer-times {
             padding: 10px;

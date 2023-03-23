@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vaktija-gtz-v2';
+const CACHE_NAME = 'vaktija-gtz-v3';
 const urlsToCache = [
   "/",
   "index.html",
